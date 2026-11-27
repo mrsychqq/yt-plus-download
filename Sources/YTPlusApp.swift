@@ -216,8 +216,9 @@ struct DownloadView: View {
                         .background(.white.opacity(0.16), in: Capsule())
                         .overlay(Capsule().strokeBorder(.white.opacity(0.24), lineWidth: 0.75))
                     }
-                    .menuStyle(.borderlessButton)
+                    .buttonStyle(.plain)
                     .menuIndicator(.hidden)
+                    .environment(\.colorScheme, .dark)
                     .fixedSize()
                     .help(L10n.themeHelp(model.theme, lang: lang))
                     .accessibilityLabel(L10n.themeHelp(model.theme, lang: lang))

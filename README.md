@@ -5,12 +5,30 @@ A native desktop app for **macOS 14+ (Apple Silicon)** and **64-bit Windows 10/1
 Supported video formats: **MP4, MKV, WebM, MOV, AVI** (144p up to 8K / Best available).  
 Supported audio formats: **MP3, M4A, Opus, WAV, FLAC**.
 
+<table>
+  <tr>
+    <td align="center"><b>Light</b></td>
+    <td align="center"><b>Dark</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshot-light.png" alt="YT+ Light theme" width="420" /></td>
+    <td><img src="docs/screenshot-dark.png" alt="YT+ Dark theme" width="420" /></td>
+  </tr>
+</table>
+
 ## Download
 
 Grab the latest self-contained installer from the [Releases](https://github.com/mrsychqq/yt-plus-download/releases) page — **both macOS and Windows installers already bundle `yt-dlp`, `FFmpeg`, `FFprobe`, and `Node.js`**, so no extra setup is required:
 
 - **macOS (Apple Silicon):** `YTPlus-1.3.0-macOS-arm64.dmg`
 - **Windows (x64):** `YTPlus-1.3.0-Windows-x64-Setup.exe`
+
+### First Launch (Security Prompts)
+
+Because YT+ is a free, open-source app without paid Apple Developer or Windows Authenticode code-signing certificates, your operating system will show an "unidentified developer" warning the first time you open it. All source code and build scripts are public in this repository.
+
+- **macOS (Gatekeeper):** After dragging **YT+** to **Applications**, right-click (or Control-click) **YT+** and choose **Open → Open**. On macOS Sequoia or later, if macOS blocks the launch, open **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** (or run `xattr -cr "/Applications/YT+.app"` in Terminal).
+- **Windows (SmartScreen):** When running `YTPlus-1.3.0-Windows-x64-Setup.exe`, click **More info** and then **Run anyway**.
 
 ## Installation & Usage
 
