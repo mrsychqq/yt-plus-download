@@ -2,7 +2,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
-bash scripts/build.sh
+YTPLUS_BUNDLE_TOOLS="${YTPLUS_BUNDLE_TOOLS:-1}" bash scripts/build.sh
 
 project_dir="$PWD"
 staging="$(mktemp -d "$project_dir/.build/image.XXXXXX")"
@@ -76,7 +76,7 @@ sync
 hdiutil detach "$device" -quiet || hdiutil detach "$device" -force -quiet
 device=""
 
-hdiutil convert "$rw_image" -format UDZO -imagekey zlib-level=9 -o "$staging/$image" >/dev/null
+hdiutil convert "$rw_image" -format ULFO -o "$staging/$image" >/dev/null
 hdiutil verify "$staging/$image"
 mv -f "$staging/$image" "$project_dir/dist/$image"
 printf '%s\n' "$project_dir/dist/$image"

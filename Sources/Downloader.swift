@@ -665,7 +665,11 @@ struct DownloadTools {
         let manager = FileManager.default
         let home = manager.homeDirectoryForCurrentUser
         var environment = ProcessInfo.processInfo.environment
-        let locations = (environment["PATH"] ?? "").split(separator: ":").map(String.init) + [
+        var locations: [String] = []
+        if let bundledTools = Bundle.main.resourceURL?.appendingPathComponent("tools", isDirectory: true).path {
+            locations.append(bundledTools)
+        }
+        locations += (environment["PATH"] ?? "").split(separator: ":").map(String.init) + [
             home.appendingPathComponent(".local/bin").path,
             home.appendingPathComponent(".local/node/bin").path,
             home.appendingPathComponent(".deno/bin").path,
