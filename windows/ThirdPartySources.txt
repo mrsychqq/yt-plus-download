@@ -1,0 +1,22 @@
+YT+ bundles these unmodified tools for downloading and converting media.
+
+yt-dlp 2026.10.26
+https://github.com/yt-dlp/yt-dlp/releases/tag/2026.10.26
+https://github.com/yt-dlp/yt-dlp/tree/2026.10.26
+See yt-dlp-LICENSE.txt and yt-dlp-THIRD-PARTY.txt.
+
+FFmpeg 9.0.2, Windows Essentials build by Gyan Doshi
+https://www.gyan.dev/ffmpeg/builds/
+https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-9.0.2-essentials_build.7z
+https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz
+See FFmpeg-LICENSE.txt and FFmpeg-README.txt for the build and library information.
+
+Node.js 24.22.1
+https://nodejs.org/en/blog/release/v24.22.1
+https://nodejs.org/dist/v24.22.1/node-v24.22.1.tar.xz
+See Node-LICENSE.txt.
+
+Microsoft .NET Desktop Runtime is included in the self-contained application.
+https://dotnet.microsoft.com/download/dotnet/10.0
+https://github.com/dotnet/runtime
+https://github.com/dotnet/winforms

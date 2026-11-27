@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>YTPlus.ico</ApplicationIcon>
+    <AssemblyName>YTPlus</AssemblyName>
+    <RootNamespace>YTPlus</RootNamespace>
+    <Product>YT+</Product>
+    <Company>YT+</Company>
+    <Description>YT+ — YouTube, TikTok &amp; Pinterest Downloader</Description>
+    <Version>1.3.0</Version>
+    <SatelliteResourceLanguages>ru</SatelliteResourceLanguages>
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=/src/windows</PathMap>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../Resources/DownloadProfiles.json" LogicalName="YTPlus.DownloadProfiles.json" />
+    <EmbeddedResource Include="YTPlus.ico" LogicalName="YTPlus.AppIcon.ico" />
+    <EmbeddedResource Include="HeaderIconYouTube.png" LogicalName="YTPlus.HeaderIcon.YouTube.png" />
+    <EmbeddedResource Include="HeaderIconTikTok.png" LogicalName="YTPlus.HeaderIcon.TikTok.png" />
+    <EmbeddedResource Include="HeaderIconPinterest.png" LogicalName="YTPlus.HeaderIcon.Pinterest.png" />
+  </ItemGroup>
+</Project>

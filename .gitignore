@@ -1,0 +1,13 @@
+.build/
+dist/
+installers/
+windows/bin/
+windows/obj/
+.DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.snk

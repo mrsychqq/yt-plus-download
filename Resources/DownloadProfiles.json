@@ -1,0 +1,46 @@
+{
+  "resolutions": [0, 4320, 2160, 1440, 1080, 720, 480, 360, 240, 144],
+  "commonArguments": [
+    "--ignore-config", "--no-plugin-dirs", "--no-playlist",
+    "--no-overwrites", "--continue", "--no-mtime",
+    "--concurrent-fragments", "4",
+    "--retries", "5", "--fragment-retries", "5", "--file-access-retries", "5",
+    "--retry-sleep", "http:exp=1:5", "--retry-sleep", "fragment:exp=1:5",
+    "--newline", "--progress", "--progress-delta", "0.25",
+    "--color", "never", "--socket-timeout", "20", "--no-simulate",
+    "--print", "before_dl:YTPLUS_TITLE\t%(title)j",
+    "--print", "after_move:YTPLUS_SAVED\t%(filepath)j",
+    "--progress-template", "download:YTPLUS_TRANSFER\t%(info.vcodec)s\t%(progress._percent_str)s\t%(progress._speed_str)s\t%(progress._eta_str)s",
+    "--progress-template", "postprocess:YTPLUS_FINALIZING"
+  ],
+  "formats": [
+    {
+      "extension": "mp4", "label": "MP4", "isAudio": false,
+      "options": ["--format-sort", "res,vcodec:h264,acodec:aac", "--merge-output-format", "mp4", "--remux-video", "mp4"]
+    },
+    {
+      "extension": "mkv", "label": "MKV", "isAudio": false,
+      "options": ["--merge-output-format", "mkv", "--remux-video", "mkv"]
+    },
+    {
+      "extension": "webm", "label": "WebM", "isAudio": false,
+      "options": ["--format-sort", "res,vcodec:vp9,acodec:opus", "--merge-output-format", "webm/mkv", "--recode-video", "webm",
+        "--postprocessor-args", "VideoConvertor+ffmpeg_o:-c:v libvpx-vp9 -crf 30 -b:v 0 -cpu-used 4 -c:a libopus"]
+    },
+    {
+      "extension": "mov", "label": "MOV", "isAudio": false,
+      "options": ["--format-sort", "res,vcodec:h264,acodec:aac", "--merge-output-format", "mkv", "--recode-video", "mov",
+        "--postprocessor-args", "VideoConvertor+ffmpeg_o:-c:v libx264 -preset fast -crf 20 -pix_fmt yuv420p -c:a aac -movflags +faststart"]
+    },
+    {
+      "extension": "avi", "label": "AVI", "isAudio": false,
+      "options": ["--format-sort", "res,vcodec:h264,acodec:aac", "--merge-output-format", "mkv", "--recode-video", "avi",
+        "--postprocessor-args", "VideoConvertor+ffmpeg_o:-c:v mpeg4 -q:v 4 -pix_fmt yuv420p -c:a libmp3lame -q:a 2"]
+    },
+    {"extension": "mp3", "label": "MP3", "isAudio": true, "options": ["--audio-quality", "2"]},
+    {"extension": "m4a", "label": "M4A", "isAudio": true, "options": ["--audio-quality", "2", "--format-sort", "acodec:aac"]},
+    {"extension": "opus", "label": "Opus", "isAudio": true, "options": ["--audio-quality", "2", "--format-sort", "acodec:opus"]},
+    {"extension": "wav", "label": "WAV", "isAudio": true, "options": []},
+    {"extension": "flac", "label": "FLAC", "isAudio": true, "options": []}
+  ]
+}
